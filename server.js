@@ -11,9 +11,6 @@ const app = express()
 const corsOptions = {
   origin: [
     "http://127.0.0.1:3030",
-    "http://localhost:5173",
-    "http://127.0.0.1:5174",
-    "http://localhost:5174",
   ],
   credentials: true,
 }
@@ -29,14 +26,6 @@ app.set("query parser", "extended")
 app.use("/api/bug", bugRoutes)
 app.use('/api/user', userRoutes)
 
-app.get("/cookies", (req, res) => {
-  let visitCount = +req.cookies.visitCount || 0
-  visitCount++
-
-  res.cookie("visitCount", visitCount, { maxAge: 1000 * 5 })
-  console.log("visitCount", visitCount)
-  res.send(`<h1>Hi Puki - ${visitCount}</h1>`)
-})
 
 app.get("/*all", (req, res) => {
   res.sendFile(path.resolve("public/index.html"))

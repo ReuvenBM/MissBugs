@@ -10,5 +10,20 @@
     "severity": 4,
     "_id": "IJcQeP",
     "createdAt": 1754830843211
+  },
+  {
+    "_id": "ee2TM",
+    "title": "Bug1",
+    "severity": 3
+  },
+  {
+    "_id": "K5qVp",
+    "title": "Bug2",
+    "severity": 4
+  },
+  {
+    "_id": "Gf54y",
+    "title": "Bug 3",
+    "severity": 26
   }
 ]
