@@ -1,12 +1,12 @@
 import express from "express"
 import cors from "cors"
-
-import { bugService } from "./services/bug.service.js"
+import cookieParser from "cookie-parser"
 import { loggerService } from "./services/logger.service.js"
+import { bugRoutes } from "./api/bug/bug.routes.js"
+import path from "path"
+import { userRoutes } from "./api/user/user.routes.js"
 
 const app = express()
-app.use(express.static("public"))
-app.use(express.json())
 
 const corsOptions = {
   origin: [
@@ -18,60 +18,29 @@ const corsOptions = {
   credentials: true,
 }
 
+//* Express Config
 app.use(cors(corsOptions))
+app.use(cookieParser())
+app.use(express.json())
+app.use(express.static("public"))
+app.set("query parser", "extended")
 
-app.get("/", (req, res) => {
-  res.send("Welcome to Express!!!")
+//* Routes
+app.use("/api/bug", bugRoutes)
+app.use('/api/user', userRoutes)
+
+app.get("/cookies", (req, res) => {
+  let visitCount = +req.cookies.visitCount || 0
+  visitCount++
+
+  res.cookie("visitCount", visitCount, { maxAge: 1000 * 5 })
+  console.log("visitCount", visitCount)
+  res.send(`<h1>Hi Puki - ${visitCount}</h1>`)
 })
 
-app.get("/api/bug", async (req, res) => {
-  const bugs = await bugService.query()
-  res.send(bugs)
+app.get("/*all", (req, res) => {
+  res.sendFile(path.resolve("public/index.html"))
 })
-
-app.put("/api/bug/:id", async (req, res) => {
-  try {
-    const { id } = req.params
-    const bugToSave = req.body
-    if (!bugToSave._id || bugToSave._id !== id) {
-      return res.status(400).send("id mismatch")
-    }
-    const savedBug = await bugService.save(bugToSave)
-    res.send(savedBug)
-  } catch (err) {
-    loggerService.error("Failed to update bug", err)
-    res.status(500).send("Failed to update bug")
-  }
-})
-
-app.post("/api/bug", async (req, res) => {
-  try {
-    const savedBug = await bugService.save(req.body)
-    res.status(201).send(savedBug)
-  } catch (err) {
-    loggerService.error("Failed to create bug", err)
-    res.status(500).send("Failed to create bug")
-  }
-})
-
-app.get("/api/bug/:id", async (req, res) => {
-  const bugId = req.params.id
-
-  try {
-    const bug = await bugService.getById(bugId)
-    res.send(bug)
-  } catch (err) {
-    loggerService.error(err)
-    res.status(404).send(err)
-  }
-})
-
-app.delete("/api/bug/:id", async (req, res) => {
-  const bugId = req.params.id
-  await bugService.remove(bugId)
-  res.send("OK")
-})
-
 const port = 3030
 app.listen(port, () =>
   loggerService.info(`Server listening on port http://127.0.0.1:${port}/`)

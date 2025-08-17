@@ -1,7 +1,9 @@
-import { loggerService } from "./logger.service.js"
-import { makeId, readJsonFile, writeJsonFile } from "./util.service.js"
+import { loggerService } from "../../services/logger.service.js"
+import { makeId, readJsonFile, writeJsonFile } from "../../services/util.service.js"
 
 const bugs = readJsonFile("./data/bug.json")
+
+const PAGE_SIZE = 4
 
 export const bugService = {
   query,
@@ -10,8 +12,27 @@ export const bugService = {
   save,
 }
 
-async function query() {
-  return bugs
+async function query(filterBy) {
+    let bugsToDisplay = bugs
+    try {
+        if (filterBy.txt) {//not working yet
+            const regExp = new RegExp(filterBy.txt, 'i')
+            bugsToDisplay = bugsToDisplay.filter(bug => regExp.test(bug.title))
+        }
+
+        if (filterBy.severity) {
+            bugsToDisplay = bugsToDisplay.filter(bug => bug.severity >= filterBy.severity)
+        }
+
+        if ('pageIdx' in filterBy) {
+            const startIdx = filterBy.pageIdx * PAGE_SIZE // 0
+            bugsToDisplay = bugsToDisplay.slice(startIdx, startIdx + PAGE_SIZE)
+        }
+
+        return bugsToDisplay
+    } catch (err) {
+        throw err
+    }
 }
 
 async function getById(bugId) {
