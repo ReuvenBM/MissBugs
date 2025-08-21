@@ -1,10 +1,11 @@
 import express from "express"
 import cors from "cors"
 import cookieParser from "cookie-parser"
+import path from "path"
 import { loggerService } from "./services/logger.service.js"
 import { bugRoutes } from "./api/bug/bug.routes.js"
-import path from "path"
 import { userRoutes } from "./api/user/user.routes.js"
+import { authRoutes } from "./api/auth/auth.routes.js"
 
 const app = express()
 
