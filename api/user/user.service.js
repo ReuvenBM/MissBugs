@@ -1,5 +1,6 @@
 import fs from 'fs'
 import { makeId, readJsonFile } from '../../services/util.service.js'
+import { loggerService } from '../../services/logger.service.js'
 
 
 const users = readJsonFile('data/user.json')
@@ -9,35 +10,67 @@ export const userService = {
     getById,
     remove,
     save,
+    getByUsername
 }
 
-
-
-function query() {
-    return Promise.resolve(users)
+async function query() {
+    return users
 }
 
-function getById(userId) {
-    const user = users.find(user => user._id === userId)
-    if (!user) return Promise.reject('User not found!')
-    return Promise.resolve(user)
+async function getById(userId) {
+    try {
+        const user = users.find(user => user._id === userId)
+        if (!user) throw `User not found by userId : ${userId}`
+        return user
+    } catch (err) {
+        loggerService.error('userService[getById] : ', err)
+        throw err
+    }
 }
 
-function remove(userId) {
-    users = users.filter(user => user._id !== userId)
-    return _saveUsersToFile()
+async function getByUsername(username) {
+    try {
+        const user = users.find(user => user.username === username)
+        // if (!user) throw `User not found by username : ${username}`
+        return user
+    } catch (err) {
+        loggerService.error('userService[getByUsername] : ', err)
+        throw err
+    }
 }
 
-function save(user) {
-    user._id = makeId()
-    // TODO: severe security issue- attacker can post admins
-    users.push(user)
-    return _saveUsersToFile().then(() => user)
+async function remove(userId) {
+    try {
+        const idx = users.findIndex(user => user._id === userId)
+        if (idx === -1) throw `Couldn't find user with _id ${causerIdrId}`
 
+        users.splice(idx, 1)
+        await _saveUsersToFile()
+    } catch (err) {
+        loggerService.error('userService[remove] : ', err)
+        throw err
+    }
+}
+
+async function save(user) {
+    try {
+        // Only handles user ADD for now
+        user._id = makeId()
+        user.score = 10000
+        user.createdAt = Date.now()
+        if (!user.imgUrl) user.imgUrl = 'https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png'
+        users.push(user)
+        await _saveUsersToFile()
+        return user
+    } catch (err) {
+        loggerService.error('userService[save] : ', err)
+        throw err
+    }
 }
 
 function _saveUsersToFile() {
     return new Promise((resolve, reject) => {
+
         const usersStr = JSON.stringify(users, null, 4)
         fs.writeFile('data/user.json', usersStr, (err) => {
             if (err) {

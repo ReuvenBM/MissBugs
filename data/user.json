@@ -1,16 +1,26 @@
 [
     {
-    "_id" : "u101",
-    "fullname" : "Muki Ja",
-    "username" : "muki",
-    "password" : "muki1234",
-    "score" : 100
+        "_id": "u101",
+        "fullname": "Muki Ja",
+        "username": "muki",
+        "password": "muki1234",
+        "score": 100
     },
     {
-    "_id" : "u102",
-    "fullname" : "Kuki muki",
-    "username" : "kuki",
-    "password" : "kuki1234",
-    "score" : 100
+        "_id": "u102",
+        "fullname": "Kuki muki",
+        "username": "kuki",
+        "password": "kuki1234",
+        "score": 100
+    },
+
+    {
+        "username": "mukion",
+        "password": "$2b$10$OUFxAUNJvFjlaFVMSK2kB.ZpDnya6I7s37iviWpLLxRPySyjX5FD6",
+        "fullname": "alef bet",
+        "_id": "vYXoD",
+        "score": 10000,
+        "createdAt": 1755771352116,
+        "imgUrl": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"
     }
 ]

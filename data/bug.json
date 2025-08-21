@@ -2,13 +2,7 @@
   {
     "_id": "def456",
     "title": "We have some issues",
-    "description": "errors when clicking Save",
-    "severity": 3,
-    "createdAt": 1542107359455,
-    "creator": { 
-      "_id": "u101",
-      "fullname": "Puki Ja" 
-    }
+    "severity": 4
   },
   {
     "_id": "abc123",
@@ -16,9 +10,9 @@
     "description": "errors all the time",
     "severity": 5,
     "createdAt": 1542107359455,
-    "creator": { 
+    "creator": {
       "_id": "u102",
-      "fullname": "Kuki muki" 
+      "fullname": "Kuki muki"
     }
   }
 ]

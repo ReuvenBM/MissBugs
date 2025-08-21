@@ -84,3 +84,46 @@
 19.8.2025, 17:27:39 - INFO - Server listening on port http://127.0.0.1:3030/
 19.8.2025, 17:29:39 - INFO - Server listening on port http://127.0.0.1:3030/
 20.8.2025, 15:52:04 - INFO - Server listening on port http://127.0.0.1:3030/
+21.8.2025, 13:08:47 - INFO - Server listening on port http://127.0.0.1:3030/
+21.8.2025, 13:11:02 - INFO - User login:  | {"_id":"u101","fullname":"Muki Ja","score":100}
+21.8.2025, 13:12:05 - ERROR - Failed to signup Username already taken
+21.8.2025, 13:12:13 - DEBUG - auth.route - new account created: {"username":"mukia","password":"$2b$10$Ao54GZSN3UtJ/NYK3RYtg.ZYw0SF3d6PBJ90EKkh7A3V3f8Sk5YhK","fullname":"Muki Ja","_id":"k5TIV","score":10000,"createdAt":1755771133156,"imgUrl":"https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"}
+21.8.2025, 13:12:13 - INFO - User signup: | {"_id":"k5TIV","fullname":"Muki Ja","imgUrl":"https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png","score":10000}
+21.8.2025, 13:12:27 - ERROR - Failed to signup Username already taken
+21.8.2025, 13:13:30 - INFO - User login:  | {"_id":"k5TIV","fullname":"Muki Ja","imgUrl":"https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png","score":10000}
+21.8.2025, 13:13:37 - INFO - User login:  | {"_id":"k5TIV","fullname":"Muki Ja","imgUrl":"https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png","score":10000}
+21.8.2025, 13:13:43 - INFO - User login:  | {"_id":"k5TIV","fullname":"Muki Ja","imgUrl":"https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png","score":10000}
+21.8.2025, 13:13:48 - INFO - User login:  | {"_id":"k5TIV","fullname":"Muki Ja","imgUrl":"https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png","score":10000}
+21.8.2025, 13:14:33 - INFO - Server listening on port http://127.0.0.1:3030/
+21.8.2025, 13:14:37 - ERROR - Failed to Login Invalid username or password
+21.8.2025, 13:14:41 - ERROR - Failed to Login Invalid username or password
+21.8.2025, 13:14:46 - ERROR - Failed to Login Invalid username or password
+21.8.2025, 13:14:56 - ERROR - Failed to Login Invalid username or password
+21.8.2025, 13:15:30 - ERROR - Failed to signup Missing required signup information
+21.8.2025, 13:15:52 - DEBUG - auth.route - new account created: {"username":"mukion","password":"$2b$10$OUFxAUNJvFjlaFVMSK2kB.ZpDnya6I7s37iviWpLLxRPySyjX5FD6","fullname":"alef bet","_id":"vYXoD","score":10000,"createdAt":1755771352116,"imgUrl":"https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png"}
+21.8.2025, 13:15:52 - INFO - User signup: | {"_id":"vYXoD","fullname":"alef bet","imgUrl":"https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png","score":10000}
+21.8.2025, 13:16:03 - INFO - User login:  | {"_id":"vYXoD","fullname":"alef bet","imgUrl":"https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png","score":10000}
+21.8.2025, 13:16:07 - ERROR - Failed to Login Invalid username or password
+21.8.2025, 13:16:11 - INFO - User login:  | {"_id":"vYXoD","fullname":"alef bet","imgUrl":"https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png","score":10000}
+21.8.2025, 13:48:19 - INFO - Server listening on port http://127.0.0.1:3030/
+21.8.2025, 13:48:34 - INFO - Server listening on port http://127.0.0.1:3030/
+21.8.2025, 13:48:34 - INFO - Server listening on port http://127.0.0.1:3030/
+21.8.2025, 13:53:41 - ERROR - Failed to Login Invalid username or password
+21.8.2025, 13:54:09 - ERROR - Failed to Login Invalid username or password
+21.8.2025, 13:54:44 - ERROR - Failed to Login Invalid username or password
+21.8.2025, 13:55:07 - INFO - Server listening on port http://127.0.0.1:3030/
+21.8.2025, 13:55:07 - INFO - Server listening on port http://127.0.0.1:3030/
+21.8.2025, 13:55:12 - ERROR - Failed to Login Invalid username or password
+21.8.2025, 13:55:46 - INFO - Server listening on port http://127.0.0.1:3030/
+21.8.2025, 13:55:46 - INFO - Server listening on port http://127.0.0.1:3030/
+21.8.2025, 13:56:29 - INFO - Server listening on port http://127.0.0.1:3030/
+21.8.2025, 13:56:29 - INFO - Server listening on port http://127.0.0.1:3030/
+21.8.2025, 13:56:33 - INFO - User login:  | {"_id":"u101","fullname":"Muki Ja","score":100}
+21.8.2025, 13:58:09 - INFO - Server listening on port http://127.0.0.1:3030/
+21.8.2025, 13:58:09 - INFO - Server listening on port http://127.0.0.1:3030/
+21.8.2025, 13:58:14 - INFO - User login:  | {"_id":"u101","fullname":"Muki Ja","score":100}
+21.8.2025, 13:58:48 - INFO - User login:  | {"_id":"u102","fullname":"Kuki muki","score":100}
+21.8.2025, 14:00:22 - INFO - Server listening on port http://127.0.0.1:3030/
+21.8.2025, 14:00:22 - INFO - Server listening on port http://127.0.0.1:3030/
+21.8.2025, 14:00:27 - INFO - Server listening on port http://127.0.0.1:3030/
+21.8.2025, 14:00:27 - INFO - Server listening on port http://127.0.0.1:3030/
