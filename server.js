@@ -10,6 +10,7 @@ const app = express()
 
 const corsOptions = {
   origin: [
+    "http://localhost:5173",
     "http://127.0.0.1:3030",
   ],
   credentials: true,
@@ -25,6 +26,7 @@ app.set("query parser", "extended")
 //* Routes
 app.use("/api/bug", bugRoutes)
 app.use('/api/user', userRoutes)
+app.use('/api/auth', authRoutes)
 
 
 app.get("/*all", (req, res) => {

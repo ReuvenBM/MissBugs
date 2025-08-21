@@ -5,5 +5,12 @@
     "username" : "muki",
     "password" : "muki1234",
     "score" : 100
+    },
+    {
+    "_id" : "u102",
+    "fullname" : "Kuki muki",
+    "username" : "kuki",
+    "password" : "kuki1234",
+    "score" : 100
     }
 ]

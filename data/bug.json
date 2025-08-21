@@ -2,28 +2,23 @@
   {
     "_id": "def456",
     "title": "We have some issues",
+    "description": "errors when clicking Save",
     "severity": 3,
-    "createdAt": 1542107359455
+    "createdAt": 1542107359455,
+    "creator": { 
+      "_id": "u101",
+      "fullname": "Puki Ja" 
+    }
   },
   {
-    "title": "notWorking2",
-    "severity": 4,
-    "_id": "IJcQeP",
-    "createdAt": 1754830843211
-  },
-  {
-    "_id": "ee2TM",
-    "title": "Bug1",
-    "severity": 0
-  },
-  {
-    "_id": "K5qVp",
-    "title": "Bug2",
-    "severity": 0
-  },
-  {
-    "_id": "Gf54y",
-    "title": "Bug 3",
-    "severity": 26
+    "_id": "abc123",
+    "title": "We have a lot of issues",
+    "description": "errors all the time",
+    "severity": 5,
+    "createdAt": 1542107359455,
+    "creator": { 
+      "_id": "u102",
+      "fullname": "Kuki muki" 
+    }
   }
 ]
